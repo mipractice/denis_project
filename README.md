@@ -1,1 +1,1 @@
-ы
+JavaFX + REST сервис 

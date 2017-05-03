@@ -6,6 +6,7 @@
 
     <groupId>groupId</groupId>
     <artifactId>JavaFXandMySQL</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
@@ -20,7 +21,18 @@
         </plugins>
     </build>
 
+    <modules>
+        <module>root</module>
+        <module>rest</module>
+    </modules>
+
     <dependencies>
+        <!-- CRUD -->
+        <dependency>
+            <groupId>groupId</groupId>
+            <artifactId>JavaFXandMySQL</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
@@ -37,6 +49,12 @@
             <groupId>org.hibernate.javax.persistence</groupId>
             <artifactId>hibernate-jpa-2.0-api</artifactId>
             <version>1.0.1.Final</version>
+        </dependency>
+        <!-- автоматом добавилась эта зависимость, когда контроллере испраление ошибки юзнул -->
+        <dependency>
+            <groupId>groupId</groupId>
+            <artifactId>crud</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>

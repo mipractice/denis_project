@@ -1,9 +1,11 @@
-package sample;
-import bdconnection.StudentServiceImpl;
-import bdconnection.CityServiceImpl;
+package controllers;
+import dbconnection.StudentServiceImpl;
+import dbconnection.CityServiceImpl;
 
 import entity.CityEntity;
 import entity.StudentEntity;
+
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,7 +24,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
