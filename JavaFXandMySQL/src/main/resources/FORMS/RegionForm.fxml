@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="FORMS.RegionForm"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegionFormController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+            <TextField prefHeight="25.0" prefWidth="230.0" promptText="Название региона" />
+            <ComboBox prefWidth="150.0" promptText="Выберете Страну" />
+          <Button fx:id="AddRegionbtn" mnemonicParsing="false" onAction="#AddRegionbtnClick" text="Добавить" />
+            <Button fx:id="DelRegionbtn" mnemonicParsing="false" onAction="#DelRegionbtnClick" text="Удалить" />
+        </items>
+      </ToolBar>
+      <TableView prefHeight="363.0" prefWidth="600.0">
+        <columns>
+          <TableColumn prefWidth="52.0" text="№" />
+          <TableColumn prefWidth="547.0" text="Название" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>

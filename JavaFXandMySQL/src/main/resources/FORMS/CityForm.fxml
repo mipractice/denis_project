@@ -1,47 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CityFormController">
    <children>
-      <SplitPane dividerPositions="0.7814070351758794, 0.907035175879397" orientation="VERTICAL" prefHeight="403.0" prefWidth="600.0">
+      <ToolBar prefHeight="40.0" prefWidth="598.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-               <children>
-                  <TableView prefHeight="308.0" prefWidth="600.0">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
-                    </columns>
-                  </TableView>
-               </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <ToolBar layoutY="4.0" prefHeight="40.0" prefWidth="598.0">
-                    <items>
-                      <Button mnemonicParsing="false" text="Button" />
-                    </items>
-                  </ToolBar>
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-               <children>
-                  <ToolBar prefHeight="40.0" prefWidth="600.0">
-                    <items>
-                      <Button mnemonicParsing="false" text="Button" />
-                    </items>
-                  </ToolBar>
-               </children>
-            </AnchorPane>
+            <TextField prefHeight="25.0" prefWidth="230.0" promptText="Название города" />
+            <ComboBox prefWidth="150.0" promptText="Выберете Регион" />
+          <Button fx:id="AddCitybtn" mnemonicParsing="false" onAction="#AddCitybtnClick" text="Добавить" />
+            <Button fx:id="DelCitybtn" mnemonicParsing="false" onAction="#DelCitybtnClick" text="Удалить" />
         </items>
-      </SplitPane>
+      </ToolBar>
+      <TableView prefHeight="360.0" prefWidth="600.0">
+        <columns>
+          <TableColumn prefWidth="47.0" text="№" />
+          <TableColumn prefWidth="502.0" text="Название" />
+        </columns>
+      </TableView>
    </children>
 </VBox>

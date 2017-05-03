@@ -14,4 +14,11 @@ public class CityFormController  implements Initializable {
 
     }
 
+    public void AddCitybtnClick (){
+
+    }
+    public void DelCitybtnClick (){
+
+
+    }
 }
