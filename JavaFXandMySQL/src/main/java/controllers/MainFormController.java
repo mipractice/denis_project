@@ -1,6 +1,6 @@
 package controllers;
-import dbconnection.StudentServiceImpl;
-import dbconnection.CityServiceImpl;
+import dbconnection.impl.StudentServiceImpl;
+import dbconnection.impl.CityServiceImpl;
 
 import entity.CityEntity;
 import entity.StudentEntity;
@@ -132,10 +132,38 @@ public class MainFormController  implements Initializable {
         select();
         tvMainTableStudent.refresh();
     }
-    public  void CountrybtnClick(){
+
+    public  void CountrybtnClick(ActionEvent actionEvent) throws Exception{
+        try {
+            Stage stage = new Stage();
+
+            Parent parent = FXMLLoader.load(getClass().getClassLoader().getResource("FORMS/CountryForm.fxml"));
+            stage.setTitle("Страны");
+            stage.setScene(new Scene(parent, 550, 400));
+            stage.setResizable(false);
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(((Node) actionEvent.getSource()).getScene().getWindow());
+            stage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
     }
-    public  void RegionbtnClick(){
+
+    public  void RegionbtnClick(ActionEvent actionEvent) throws Exception{
+        try {
+            Stage stage = new Stage();
+
+            Parent parent = FXMLLoader.load(getClass().getClassLoader().getResource("FORMS/RegionForm.fxml"));
+            stage.setTitle("Регионы");
+            stage.setScene(new Scene(parent, 550, 400));
+            stage.setResizable(false);
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(((Node) actionEvent.getSource()).getScene().getWindow());
+            stage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
     }
 
@@ -144,8 +172,8 @@ public class MainFormController  implements Initializable {
             Stage stage = new Stage();
 
             Parent parent = FXMLLoader.load(getClass().getClassLoader().getResource("FORMS/CityForm.fxml"));
-            stage.setTitle("Страна");
-            stage.setScene(new Scene(parent, 430, 400));
+            stage.setTitle("Города");
+            stage.setScene(new Scene(parent, 550, 400));
             stage.setResizable(false);
             stage.initModality(Modality.WINDOW_MODAL);
             stage.initOwner(((Node) actionEvent.getSource()).getScene().getWindow());

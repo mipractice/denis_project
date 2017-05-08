@@ -6,7 +6,11 @@ import javax.persistence.*;
  * Created by DrSwitch on 30.04.2017.
  */
 @Entity
-@Table(name = "region", schema = "infostudent2", catalog = "")
+@Table(name = "region", schema = "infostudent2")
+@NamedQueries({
+        @NamedQuery(name = "RegionDAOServiceImpl.getAll", query = "SELECT c from RegionEntity c"),
+        @NamedQuery(name = "RegionEntity.getAll", query = "SELECT c from RegionEntity c")
+})
 public class RegionEntity {
     private int regionid;
     private String regionname;
@@ -63,4 +67,20 @@ public class RegionEntity {
         result = 31 * result + countryid;
         return result;
     }
+
+    public RegionEntity() {
+    }
+
+    public RegionEntity(int regionid, String regionname, int countryid) {
+        this.regionid = regionid;
+        this.regionname = regionname;
+        this.countryid = countryid;
+    }
+
+    @Override
+    public String toString() {
+        return regionname;
+    }
+
+
 }

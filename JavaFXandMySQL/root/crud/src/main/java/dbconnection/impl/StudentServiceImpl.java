@@ -1,5 +1,7 @@
-package dbconnection;
+package dbconnection.impl;
 
+import dao.impl.StudentDAOServiceImpl;
+import dbconnection.intface.StudentService;
 import entity.StudentEntity;
 
 import javax.persistence.EntityManager;
@@ -11,9 +13,10 @@ import java.util.List;
 /**
  * Created by DrSwitch on 13.04.2017.
  */
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceImpl implements StudentService {
 
     private EntityManager entityManager = Persistence.createEntityManagerFactory("CRUD").createEntityManager();
+    private StudentDAOServiceImpl studentDAOService = new StudentDAOServiceImpl();
 
     public StudentEntity getByIdStudent(int idstudent) {
         return this.entityManager.find(StudentEntity.class, idstudent);
@@ -42,7 +45,7 @@ public class StudentServiceImpl implements StudentService{
     }
 
     public List<StudentEntity> getAllStudent(){
-        TypedQuery<StudentEntity> studentTypedQuery = entityManager.createNamedQuery("StudentEntity.getAll", StudentEntity.class);
-        return studentTypedQuery.getResultList();
+     //   TypedQuery<StudentEntity> studentTypedQuery = entityManager.createNamedQuery("StudentEntity.getAll", StudentEntity.class);
+        return studentDAOService.getAll();
     }
 }

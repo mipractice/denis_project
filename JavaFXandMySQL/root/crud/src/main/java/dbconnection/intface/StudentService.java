@@ -1,4 +1,4 @@
-package dbconnection;
+package dbconnection.intface;
 
 import entity.StudentEntity;
 

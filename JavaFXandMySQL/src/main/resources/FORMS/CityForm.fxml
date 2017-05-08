@@ -12,16 +12,17 @@
    <children>
       <ToolBar prefHeight="40.0" prefWidth="598.0">
         <items>
-            <TextField prefHeight="25.0" prefWidth="230.0" promptText="Название города" />
-            <ComboBox prefWidth="150.0" promptText="Выберете Регион" />
+            <TextField fx:id="tfCityName" prefHeight="25.0" prefWidth="230.0" promptText="Название города" />
+            <ComboBox fx:id="cbRegion" prefWidth="150.0" promptText="Выберете Регион" />
           <Button fx:id="AddCitybtn" mnemonicParsing="false" onAction="#AddCitybtnClick" text="Добавить" />
             <Button fx:id="DelCitybtn" mnemonicParsing="false" onAction="#DelCitybtnClick" text="Удалить" />
         </items>
       </ToolBar>
-      <TableView prefHeight="360.0" prefWidth="600.0">
+      <TableView fx:id="tvCities" prefHeight="360.0" prefWidth="600.0">
         <columns>
-          <TableColumn prefWidth="47.0" text="№" />
-          <TableColumn prefWidth="502.0" text="Название" />
+          <TableColumn fx:id="tcCityId" prefWidth="47.0" text="№" />
+          <TableColumn fx:id="tcCityName" prefWidth="221.0" text="Название" />
+            <TableColumn fx:id="tcRegion" prefWidth="281.0" text="Регион" />
         </columns>
       </TableView>
    </children>

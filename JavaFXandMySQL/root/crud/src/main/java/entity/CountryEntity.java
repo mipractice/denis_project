@@ -6,7 +6,14 @@ import javax.persistence.*;
  * Created by DrSwitch on 30.04.2017.
  */
 @Entity
-@Table(name = "country", schema = "infostudent2", catalog = "")
+@Table(name = "country", schema = "infostudent2")
+@NamedQueries({
+        @NamedQuery(name = "CountryDAOServiceImpl.getAll", query = "SELECT c from CountryEntity c"),
+        @NamedQuery(name = "CountryEntity.getAll", query = "SELECT c from CountryEntity c"),
+        @NamedQuery(name = "CountryDAOServiceImpl.find", query = "SELECT c from CountryEntity c WHERE c.id = :id")
+
+})
+
 public class CountryEntity {
     private int countryid;
     private String countryname;
@@ -49,5 +56,18 @@ public class CountryEntity {
         int result = countryid;
         result = 31 * result + (countryname != null ? countryname.hashCode() : 0);
         return result;
+    }
+
+    public CountryEntity(int countryid, String countryname) {
+        this.countryid = countryid;
+        this.countryname = countryname;
+    }
+
+    public CountryEntity() {
+    }
+
+    @Override
+    public String toString() {
+        return countryname;
     }
 }

@@ -7,7 +7,11 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "student", schema = "infostudent2")
-@NamedQuery(name = "StudentEntity.getAll", query = "SELECT c from StudentEntity c")
+@NamedQueries({
+        @NamedQuery(name = "StudentDAOServiceImpl.getAll", query = "SELECT c from StudentEntity c"),
+        @NamedQuery(name = "StudentEntity.getAll", query = "SELECT c from StudentEntity c")
+})
+
 public class StudentEntity {
     private String fio;
     private String address;

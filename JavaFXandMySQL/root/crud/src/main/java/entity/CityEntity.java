@@ -7,8 +7,13 @@ import java.util.Collection;
  * Created by DrSwitch on 30.04.2017.
  */
 @Entity
-@Table(name = "city", schema = "infostudent2", catalog = "")
-@NamedQuery(name = "CityEntity.getAll", query = "SELECT c from CityEntity c")
+@Table(name = "city", schema = "infostudent2")
+@NamedQueries({
+        @NamedQuery(name = "CityDAOServiceImpl.getAll", query = "SELECT c from CityEntity c"),
+        @NamedQuery(name = "CityEntity.getAll", query = "SELECT c from CityEntity c")
+})
+
+//тут нада поискать более изящное решение у названия запроса
 public class CityEntity {
     private int cityid;
     private String cityname;
