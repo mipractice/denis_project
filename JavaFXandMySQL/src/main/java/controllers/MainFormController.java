@@ -88,7 +88,7 @@ public class MainFormController  implements Initializable {
         }
         //заполняем обсерваблелисты для города
         for (CityEntity city : lsCity) {
-            cityNamesObservableList.add(new CityEntity(city.getCityid(),city.getCityname()));
+            cityNamesObservableList.add(new CityEntity(city.getCityid(),city.getCityname(),city.getRegion()));
         }
 
         //заполняем кобобох из обсерваблелиста

@@ -20,7 +20,7 @@
       </ToolBar>
       <TableView fx:id="tvCities" prefHeight="360.0" prefWidth="600.0">
         <columns>
-          <TableColumn fx:id="tcCityId" prefWidth="47.0" text="№" />
+          <TableColumn fx:id="tcCityId" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" text="№" />
           <TableColumn fx:id="tcCityName" prefWidth="221.0" text="Название" />
             <TableColumn fx:id="tcRegion" prefWidth="281.0" text="Регион" />
         </columns>

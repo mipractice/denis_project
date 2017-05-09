@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by DrSwitch on 30.04.2017.
@@ -17,6 +18,7 @@ import javax.persistence.*;
 public class CountryEntity {
     private int countryid;
     private String countryname;
+    private Collection<RegionEntity> regions;
 
     @Id
     @Column(name = "countryid")
@@ -69,5 +71,14 @@ public class CountryEntity {
     @Override
     public String toString() {
         return countryname;
+    }
+
+    @OneToMany(mappedBy = "country")
+    public Collection<RegionEntity> getRegions() {
+        return regions;
+    }
+
+    public void setRegions(Collection<RegionEntity> regions) {
+        this.regions = regions;
     }
 }
