@@ -11,7 +11,8 @@ import java.util.Collection;
 @NamedQueries({
         @NamedQuery(name = "CityDAOServiceImpl.getAll", query = "SELECT c from CityEntity c"),
         @NamedQuery(name = "CityEntity.getAll", query = "SELECT c from CityEntity c"),
-        @NamedQuery(name = "CityDAOServiceImpl.find", query = "SELECT c from CityEntity c WHERE c.id = :id")
+        @NamedQuery(name = "CityDAOServiceImpl.find", query = "SELECT c from CityEntity c WHERE c.id = :id"),
+        @NamedQuery(name = "CitiesInRegion.find", query = "SELECT c from CityEntity c WHERE c.region = :region")
 })
 
 //тут нада поискать более изящное решение у названия запроса

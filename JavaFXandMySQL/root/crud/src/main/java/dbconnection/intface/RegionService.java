@@ -1,5 +1,6 @@
 package dbconnection.intface;
 
+import entity.CountryEntity;
 import entity.RegionEntity;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface RegionService {
     void deleteRegion(int regionid);
 
     List<RegionEntity> getAllRegion();
+
+    List<RegionEntity> getRegionsInCountry(CountryEntity country);
 }

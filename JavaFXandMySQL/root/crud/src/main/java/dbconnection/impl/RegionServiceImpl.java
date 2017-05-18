@@ -2,8 +2,10 @@ package dbconnection.impl;
 
 import dao.impl.RegionDAOServiceImpl;
 import dbconnection.intface.RegionService;
+import entity.CountryEntity;
 import entity.RegionEntity;
 
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 /**
@@ -36,5 +38,11 @@ public class RegionServiceImpl implements RegionService {
     @Override
     public List<RegionEntity> getAllRegion() {
         return regionDAOService.getAll();
+    }
+
+    @Override
+    public List<RegionEntity> getRegionsInCountry(CountryEntity country){
+
+        return regionDAOService.getRegionsInContry(country);
     }
 }

@@ -6,8 +6,8 @@
 
     <persistence-unit name="CRUD" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-            <class>entity.CityEntity</class>
-            <class>entity.CountryEntity</class>
+        <class>entity.CountryEntity</class>
+        <class>entity.CityEntity</class>
             <class>entity.RegionEntity</class>
             <class>entity.StudentEntity</class>
         <properties>

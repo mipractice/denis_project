@@ -1,6 +1,12 @@
 package entity;
 
+import org.hibernate.annotations.*;
+
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import java.util.Collection;
 
 /**
@@ -11,7 +17,8 @@ import java.util.Collection;
 @NamedQueries({
         @NamedQuery(name = "RegionDAOServiceImpl.getAll", query = "SELECT c from RegionEntity c"),
         @NamedQuery(name = "RegionEntity.getAll", query = "SELECT c from RegionEntity c"),
-        @NamedQuery(name = "RegionDAOServiceImpl.find", query = "SELECT c from RegionEntity c WHERE c.id = :id")
+        @NamedQuery(name = "RegionDAOServiceImpl.find", query = "SELECT c from RegionEntity c WHERE c.id = :id"),
+        @NamedQuery(name = "RegionsInCountry.find", query = "SELECT c from RegionEntity c WHERE c.country = :country")
 })
 public class RegionEntity {
     private int regionid;

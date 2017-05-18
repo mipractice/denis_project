@@ -3,6 +3,7 @@ package dbconnection.impl;
 import dao.impl.CityDAOServiceImpl;
 import dbconnection.intface.CityService;
 import entity.CityEntity;
+import entity.RegionEntity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
@@ -35,4 +36,9 @@ public class CityServiceImpl implements CityService {
     public List<CityEntity> getAllcity() {
         return cityDAOService.getAll();
     }
+
+    public List<CityEntity> getCitiesInRegion(RegionEntity region) {
+        return cityDAOService.getCitiesInRegion(region);
+    }
+
 }

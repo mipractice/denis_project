@@ -15,8 +15,6 @@ public class CountryServiceImpl implements CountryService {
     private CountryDAOServiceImpl countryDAOService = new CountryDAOServiceImpl();
     @Override
     public CountryEntity getByIdCountry(int countryid) {
-
-       // return this.countryDAOService.getById(countryid);
         return null;
     }
 

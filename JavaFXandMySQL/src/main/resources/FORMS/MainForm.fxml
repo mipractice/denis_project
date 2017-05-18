@@ -16,7 +16,7 @@
       <ToolBar prefHeight="40.0" prefWidth="384.0">
         <items>
             <Button fx:id="btnConnect" mnemonicParsing="false" onAction="#btnclick" text="Обновить" />
-            <Button mnemonicParsing="false" text="Изменить" />
+            <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#Updatebtnclick"  text="Изменить" />
             <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#Deletebtnclick" text="Удалить" />
             <Button fx:id="btnCountry" mnemonicParsing="false" onAction="#CountrybtnClick" text="Страны" />
             <Button fx:id="btnRegion" mnemonicParsing="false" onAction="#RegionbtnClick" text="Регионы" />
@@ -30,11 +30,11 @@
                   <Label fx:id="lbText" />
                   <TextField fx:id="tfFIO" layoutX="12.0" layoutY="29.0" prefHeight="25.0" prefWidth="194.0" promptText="ФИО" />
                   <TextField fx:id="tfAddress" layoutX="12.0" layoutY="66.0" prefHeight="25.0" prefWidth="194.0" promptText="Адрес" />
-                  <ComboBox fx:id="cbCountry" layoutX="12.0" layoutY="100.0" prefHeight="25.0" prefWidth="194.0" promptText="Выберете страну" />
-                  <ComboBox fx:id="cbRegion" layoutX="12.0" layoutY="137.0" prefHeight="25.0" prefWidth="194.0" promptText="Выберете регион" />
+                  <ComboBox fx:id="cbCountry" layoutX="12.0" layoutY="100.0" onAction="#CountryChange" prefHeight="25.0" prefWidth="194.0" promptText="Выберете страну" />
+                  <ComboBox fx:id="cbRegion" layoutX="12.0" layoutY="137.0" onAction="#RegionChange" prefHeight="25.0" prefWidth="194.0" promptText="Выберете регион" />
                   <ComboBox fx:id="cbCity" layoutX="12.0" layoutY="173.0" prefHeight="25.0" prefWidth="194.0" promptText="Выберете город" />
                   <Button fx:id="Insertbtn" layoutX="134.0" layoutY="212.0" mnemonicParsing="false" onAction="#Insertbtnclick" text="Добавить" />
-                  <Button layoutX="14.0" layoutY="212.0" mnemonicParsing="false" text="Отмена" />
+                  <Button fx:id="Cancelbtn" layoutX="14.0" layoutY="212.0" mnemonicParsing="false" onAction="#Cancelbtnclick" text="Отмена" />
                </children>
             </AnchorPane>
           <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="361.0" prefWidth="480.0">

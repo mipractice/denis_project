@@ -9,7 +9,8 @@ import javax.persistence.*;
 @Table(name = "student", schema = "infostudent2")
 @NamedQueries({
         @NamedQuery(name = "StudentDAOServiceImpl.getAll", query = "SELECT c from StudentEntity c"),
-        @NamedQuery(name = "StudentEntity.getAll", query = "SELECT c from StudentEntity c")
+        @NamedQuery(name = "StudentEntity.getAll", query = "SELECT c from StudentEntity c"),
+        @NamedQuery(name = "StudentDAOServiceImpl.find", query = "SELECT c from StudentEntity c WHERE c.id = :id")
 })
 
 public class StudentEntity {
